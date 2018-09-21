@@ -26,6 +26,7 @@ module GlobalConstants
       'w' => '0xF8E7',
       'y' => '0xF8E8',
       '´' => '0xF8E9',
+      "'" => '0xF8E9',
       '1' => '0xF8F0',
       '2' => '0xF8F1',
       '3' => '0xF8F2',
@@ -37,6 +38,7 @@ module GlobalConstants
       '9' => '0xF8F9',
       '0' => '0xF8FD',
       '.' => '0xF8FE',
-      ',' => '0xF8FF'
+      ',' => '0xF8FF',
+      ' ' => '0x0020'
   }
 end
