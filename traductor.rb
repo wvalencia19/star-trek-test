@@ -22,7 +22,7 @@ class Traductor
           break
         end
       end
-      return 'Not found' unless found
+      return nil unless found
     end
     return response.chomp(' ')
   end
