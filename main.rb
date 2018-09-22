@@ -1,29 +1,26 @@
 require_relative 'traductor'
 require_relative 'rest_client'
+require_relative 'character'
 
 traductor = Traductor.new
 rest_client = RestClient.new
+character = Character.new
 
 
 ARGV.each do |english_name|
   traduction = traductor.eglish_to_klingon(english_name)
   if traduction
     p traduction
-    character = rest_client.get_character_by_name(english_name)['characters']
-
-    if character != []
-      udid = character[0]['uid']
+    uid = character.get_by_name(english_name, rest_client)
+    if uid
+      specie = character.get_specie_by_uid(uid, rest_client)
+      if specie
+        p specie
+      else
+        p 'Specie not determined'
+      end
     else
       p 'Caracter does not exits'
-    end
-
-    if udid
-      character = rest_client.get_character_by_uid(udid)['character']['characterSpecies'][0]
-      if character
-        p character['name']
-      else
-        p 'Species not determined'
-      end
     end
   else
     p 'Not translatable Name'
