@@ -1,39 +1,17 @@
-require_relative 'traductor'
-require_relative 'rest_client'
 require_relative 'character'
-require 'redis'
+require_relative 'rest_client'
 
-traductor = Traductor.new
 rest_client = RestClient.new
-character = Character.new
-redis = Redis.new
-
+character = Character.new(rest_client)
 
 ARGV.each do |english_name|
-  character_data = redis.hmget(english_name, 'traduction', 'specie')
-  if character_data[0]
-    p character_data[0]
-    p character_data[1]
+  response = character.process_name(english_name)
+  if response
+    p response[:traduction]
+    p response[:specie]
   else
-    traduction = traductor.eglish_to_klingon(english_name)
-    if traduction
-      p traduction
-      uid = character.get_by_name(english_name, rest_client)
-      if uid
-        specie = character.get_specie_by_uid(uid, rest_client)
-        if specie
-          p specie
-        else
-          specie = 'Specie not determined'
-          p specie
-        end
-      else
-        p 'Caracter does not exits'
-      end
-      redis.hmset(english_name, 'traduction',traduction, 'specie', specie)
-    else
-      p 'Not translatable Name'
-    end
+    p 'Not translatable Name'
   end
 end
+
 

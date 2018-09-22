@@ -15,7 +15,7 @@ class Traductor
         else
           word = word_origin
         end
-        if word[i,word_size].index(letter) == 0
+        if word[i, word_size].index(letter) == 0
           response << "#{v} "
           i += (letter.size)
           found = true
