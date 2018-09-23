@@ -25,7 +25,8 @@ class Character
         else
           response[:specie] = GlobalConstants::CHARACTER_NOT_EXITS
         end
-        @cache.hmset(english_name, 'traduction',traduction, 'specie', response[:specie])
+        @cache.hmset(english_name, 'traduction',traduction, 'specie',
+                     response[:specie])
         @cache.expire(english_name, 691200)
         return response
       end

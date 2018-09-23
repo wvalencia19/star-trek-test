@@ -9,14 +9,14 @@ class Traductor
     i = 0
     while i < word_size do
       found = false
-      GlobalConstants::KLINGON_ALPHABET.each do |letter, v|
+      GlobalConstants::KLINGON_ALPHABET.each do |letter, hexcode|
         unless letter.downcase == 'q'
           word = word_lower
         else
           word = word_origin
         end
         if word[i, word_size].index(letter) == 0
-          response << "#{v} "
+          response << "#{hexcode} "
           i += (letter.size)
           found = true
           break

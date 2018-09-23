@@ -13,6 +13,7 @@ describe 'Test process name' do
     @traduction = '0xF8DD 0xF8E1 0xF8E9 0xF8D4 0xF8DF'
     @redis.flushall
   end
+
   context 'when english name does not exist in redis' do
     it 'get data from external resources' do
       expect(@character).to receive(:get_by_name)
@@ -27,6 +28,7 @@ describe 'Test process name' do
       expect(result[:traduction]).to eq @traduction
     end
   end
+
   context 'when english name exits' do
     it 'get data from redis' do
       redis_response = [@traduction, @specie]
@@ -40,6 +42,5 @@ describe 'Test process name' do
       expect(test[:traduction]).to eq @traduction
       expect(test[:specie]).to eq @specie
     end
-
   end
 end
