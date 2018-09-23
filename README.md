@@ -20,7 +20,7 @@
 * Ruby environment
 * Redis server
 
-# Install Ruby: 
+## Install Ruby: 
 
 In the app there is a file `.ruby-version` with the required version of Ruby.
 
