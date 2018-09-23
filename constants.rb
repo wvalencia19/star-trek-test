@@ -41,4 +41,7 @@ module GlobalConstants
       ',' => '0xF8FF',
       ' ' => '0x0020'
   }
+  CHARACTER_NOT_EXITS = 'Character does not exits'
+  SPECIE_NOT_DETERMINED =  'Specie not determined'
+  NOT_TRANSLATABLE_NAME = 'Not translatable Name'
 end

@@ -1,8 +1,11 @@
 require_relative 'character'
 require_relative 'rest_client'
+require_relative 'constants'
+require 'redis'
 
 rest_client = RestClient.new
-character = Character.new(rest_client)
+redis = Redis.new
+character = Character.new(rest_client, redis)
 
 ARGV.each do |english_name|
   response = character.process_name(english_name)
@@ -10,7 +13,7 @@ ARGV.each do |english_name|
     p response[:traduction]
     p response[:specie]
   else
-    p 'Not translatable Name'
+    p GlobalConstants::NOT_TRANSLATABLE_NAME
   end
 end
 
