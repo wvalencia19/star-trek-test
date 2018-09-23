@@ -12,6 +12,10 @@
 -> "Klingon"
 ```
 
+## Run tests:
+```
+    rspec
+```
 ## Requirements
 * Ruby environment
 * Redis server
