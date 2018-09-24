@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://stapi.co/api/v1/rest/character/search?name=Or%27Eq
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Date:
+      - Mon, 24 Sep 2018 00:16:02 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"page":{"pageNumber":0,"pageSize":50,"numberOfElements":1,"totalElements":1,"totalPages":1,"firstPage":true,"lastPage":true},"sort":{"clauses":[]},"characters":[{"uid":"CHMA0000226446","name":"Or''Eq","gender":null,"yearOfBirth":null,"monthOfBirth":null,"dayOfBirth":null,"placeOfBirth":null,"yearOfDeath":2256,"monthOfDeath":null,"dayOfDeath":null,"placeOfDeath":null,"height":null,"weight":null,"deceased":true,"bloodType":null,"maritalStatus":null,"serialNumber":null,"hologramActivationDate":null,"hologramStatus":null,"hologramDateStatus":null,"hologram":false,"fictionalCharacter":false,"mirror":false,"alternateReality":false}]}'
+    http_version: 
+  recorded_at: Mon, 24 Sep 2018 00:16:03 GMT
+- request:
+    method: get
+    uri: http://stapi.co/api/v1/rest/character/?uid=CHMA0000226446
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Frame-Options:
+      - DENY
+      Date:
+      - Mon, 24 Sep 2018 00:16:03 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"character":{"uid":"CHMA0000226446","name":"Or''Eq","gender":null,"yearOfBirth":null,"monthOfBirth":null,"dayOfBirth":null,"placeOfBirth":null,"yearOfDeath":2256,"monthOfDeath":null,"dayOfDeath":null,"placeOfDeath":null,"height":null,"weight":null,"deceased":true,"bloodType":null,"maritalStatus":null,"serialNumber":null,"hologramActivationDate":null,"hologramStatus":null,"hologramDateStatus":null,"hologram":false,"fictionalCharacter":false,"mirror":false,"alternateReality":false,"performers":[],"episodes":[],"movies":[],"characterSpecies":[{"uid":"SPMA0000005172","name":"Klingon","numerator":1,"denominator":1}],"characterRelations":[{"type":"Brother","source":{"uid":"CHMA0000226446","name":"Or''Eq"},"target":{"uid":"CHMA0000226445","name":"Rejac"}},{"type":"Sibling","source":{"uid":"CHMA0000226445","name":"Rejac"},"target":{"uid":"CHMA0000226446","name":"Or''Eq"}}],"titles":[],"occupations":[],"organizations":[]}}'
+    http_version: 
+  recorded_at: Mon, 24 Sep 2018 00:16:03 GMT
+recorded_with: VCR 4.0.0

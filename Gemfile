@@ -7,4 +7,6 @@ gem 'redis'
 group :test do
   gem 'rspec', '~> 3.0'
   gem 'fakeredis', :require => 'fakeredis/rspec'
+  gem 'vcr'
+  gem 'webmock'
 end

@@ -10,13 +10,15 @@ class RestClient
         'Content-Type' => 'application/x-www-form-urlencoded'
     }
     options = {query: {name: name}, headers: headers}
-
-    self.class.post("/search", options)
+    response = self.class.post("/search", options)
+    return nil unless response.code == 200
+    return response['characters']
   end
 
   def get_character_by_uid(uid)
     options = {query: {uid: uid}}
-
-    self.class.get("/", options)
+    response = self.class.get("/", options)
+    return nil unless response.code == 200
+    return response['character']['characterSpecies'][0]
   end
 end

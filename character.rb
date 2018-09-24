@@ -35,13 +35,12 @@ class Character
 
   private
   def get_by_name(english_name)
-    character = @resource.get_character_by_name(english_name)['characters']
-    return character[0]['uid'] if character != []
+    character = @resource.get_character_by_name(english_name)
+    return character[0]['uid'] if character
   end
 
   def get_specie_by_uid(uid)
-    response = @resource.get_character_by_uid(uid)
-    character = response['character']['characterSpecies'][0]
+    character = @resource.get_character_by_uid(uid)
     specie = character['name'] if character
     return specie ? specie : GlobalConstants::SPECIE_NOT_DETERMINED
   end
